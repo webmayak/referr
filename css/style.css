@@ -18,6 +18,23 @@
     margin-bottom: 0;
 }
 
+.p-packs__title-wrap select.form-control {
+    height: 40px !important;
+    padding: 0 50px 0 20px;
+    font-size: 14px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 16px) 50%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='6' viewBox='0 0 9 6'%3E%3Cpath d='M4.5 6L0 0h9z' fill='%23c4c4c4' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.p-packs__title-wrap .custom-control-label {
+    font-size: 14px;
+    line-height: 1.5rem;
+}
+
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before,
 .custom-control-input:checked ~ .custom-control-label::before {
     background-color: #02945d;
@@ -33,7 +50,7 @@
     border-radius: 6px;
     border: none;
     margin-bottom: 30px;
-    transition: 0.25s;
+    transition: 0.4s;
 }
 
 .pack-item:hover {
@@ -44,6 +61,7 @@
     height: 200px;
     border-radius: 6px 6px 0 0;
     position: relative;
+    overflow: hidden;
 }
 
 .pack-item__img-wrap.bg-success {
@@ -75,6 +93,11 @@
     height: 100%;
     object-fit: scale-down;
     object-position: 50% 100%;
+    transition: 0.4s;
+}
+
+.pack-item:hover .pack-item__img {
+    transform: scale(1.07);
 }
 
 .pack-item__descr {
@@ -83,7 +106,7 @@
     left: 0;
     right: 0;
     text-align: center;
-    background-color: rgba(255, 255, 90, 0.85);
+    background-color: rgba(255, 225, 90, 0.89);
     padding: 8px 30px;
 }
 
@@ -100,6 +123,8 @@
     font-weight: normal;
     border-radius: 3px;
     padding: 7px;
+    z-index: 1;
+    transition: 0.25s;
 }
 
 .p-packs .badge.badge-warning {
@@ -116,6 +141,18 @@
     color: #333333;
 }
 
+.p-packs .badge.badge-warning:hover {
+    background-color: #f3b138;
+}
+
+.p-packs .badge.badge-danger:hover {
+    background-color: #fe8755;
+}
+
+.p-packs .badge.badge-primary:hover {
+    background-color: #60a5fc;
+}
+
 .pack-item .badge-likes {
     background-color: #ffffff;
     display: flex;
@@ -126,6 +163,14 @@
 .pack-item .badge-likes .fa-heart {
     font-size: 15px;
     margin-right: 5px;
+}
+
+.p-packs .badge-likes .fa-heart {
+    transition: 0.3s;
+}
+
+.p-packs .badge-likes:hover .fa-heart {
+    transform: scaleX(-1);
 }
 
 .pack-item .card-body {
@@ -236,6 +281,11 @@
     width: 100%;
     min-height: 350px;
     margin-bottom: 30px;
+    transition: 0.4s;
+}
+
+.pack-info-item:hover {
+    box-shadow: 0 0 30px 0 #cccccc;
 }
 
 .pack-info-item.active {
