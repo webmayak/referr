@@ -39,8 +39,11 @@
 
 .landing-header {
     border-top: 1px solid #ffffff;
-    padding-top: 110px;
-    margin-bottom: 175px;
+    padding: 100px 0;
+    min-height: calc(100vh - 250px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .landing-header .text-marked {
@@ -50,7 +53,11 @@
 }
 
 .landing-slogan {
-    margin-bottom: 175px;
+    margin-bottom: 30px;
+}
+
+.landing-slogan .lax {
+    opacity: 0;
 }
 
 .landing-partner {
