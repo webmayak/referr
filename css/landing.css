@@ -2,6 +2,11 @@
     line-height: 1.15;
 }
 
+.z-2 {
+    position: relative;
+    z-index: 2;
+}
+
 .text-decoration-none {
     text-decoration: none !important;
 }
@@ -17,18 +22,38 @@
 
 .bg-green-light {
     background-color: #f3f9f1;
+    transition: 0.4s;
+}
+
+.bg-green-light:hover {
+    background-color: #e4f1df;
 }
 
 .bg-orange-light {
     background-color: #f9f6f1;
+    transition: 0.4s;
+}
+
+.bg-orange-light:hover {
+    background-color: #f1eadf;
 }
 
 .bg-violet-light {
     background-color: #f1f2f9;
+    transition: 0.4s;
+}
+
+.bg-violet-light:hover {
+    background-color: #dfe2f1;
 }
 
 .bg-mint-light {
     background-color: #f1f9f7;
+    transition: 0.4s;
+}
+
+.bg-mint-light:hover {
+    background-color: #dff1ed;
 }
 
 .p-landing {
@@ -54,10 +79,6 @@
 
 .landing-slogan {
     margin-bottom: 30px;
-}
-
-.landing-slogan .lax {
-    opacity: 0;
 }
 
 .landing-partner {
