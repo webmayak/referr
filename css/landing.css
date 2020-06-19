@@ -2,11 +2,6 @@
     line-height: 1.15;
 }
 
-.z-2 {
-    position: relative;
-    z-index: 2;
-}
-
 .text-decoration-none {
     text-decoration: none !important;
 }
@@ -58,8 +53,14 @@
 
 .p-landing {
     background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-image: url('../img/landing/header-bg.jpg');
+    background-size: 100% 930px;
+    background-image: linear-gradient(0deg, #ffffff 0%, #b8d4c3 100%),
+    radial-gradient(100% 224.43% at 0% 0%, #FCC482 0%, #002E74 100%),
+    linear-gradient(121.28deg, #FFD464 0%, #00553B 100%),
+    linear-gradient(229.79deg, #7534FF 0%, #248900 94.19%),
+    radial-gradient(56.26% 101.79% at 50% 0%, #8F00FF 0%, #493500 100%),
+    linear-gradient(96.19deg, #500052 3.37%, #D5B300 96.63%);
+    background-blend-mode: overlay, screen, lighten, hard-light, screen, normal;
 }
 
 .landing-header {
@@ -78,7 +79,7 @@
 }
 
 .landing-slogan {
-    margin-bottom: 30px;
+    margin-bottom: 175px;
 }
 
 .landing-partner {
@@ -313,7 +314,6 @@
 .landing-consult {
     padding: 60px 0 30px;
 }
-
 
 @media (max-width: 991px) {
     .landing-header .text-marked {
