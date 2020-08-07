@@ -235,12 +235,15 @@
                         Хотите получать трафик из поисковых систем? Линкбилдинг поможет вам ускориться. <br>
                         Оставьте заявку и мы расскажем вам о возможностях линкбилдинга для вашего сайта и бизнеса
                     </p>
-                    <button class="btn btn-success text-left">
-                        <span class="d-block b-icon right s-16">
-                            <i class="icon fa fa-arrow-right"></i>
-                            Оставить заявку
-                        </span>
-                    </button>
+                    <div class="btn-wrap">
+                        <a href="#tariffs" class="btn btn-outline-success">Перейти к тарифам</a>
+                        <button class="btn btn-success text-left">
+                            <span class="d-block b-icon right s-16">
+                                <i class="icon fa fa-arrow-right"></i>
+                                Оставить заявку
+                            </span>
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -387,7 +390,335 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
+                <!-- copied from mainpage -->
+                <style>
+                    #header .header-menu-box .header-menu ul li.menu-item-9123.current-menu-item a {
+                        background: transparent !important;
+                        font-weight: normal !important;
+                    }
+                    /*.nav-top-tariff{*/
+                    /*    width:100%;*/
+                    /*    margin-bottom:20px;*/
+                    /*    display:inline-block;*/
+                    /*}*/
+
+                    /*.nav-top-tariff .country,*/
+                    /*.nav-top-tariff .w-nav-tariff{*/
+                    /*    width:50%;*/
+                    /*    float:left;*/
+                    /*}*/
+
+                    /*#select-tariff{*/
+                    /*    width:337px;*/
+                    /*}*/
+
+                    .nav-tariff{
+                        float:right;
+                    }
+
+                    /*.nav-top-tariff .form-control {*/
+                    /*    height: auto !important;*/
+                    /*    padding: 9px !important;*/
+                    /*}*/
+
+                    .nav-tariff{
+                        overflow: hidden;
+                        border: 1px solid #02945d;
+                        border-radius:5px;
+                    }
+
+                    .nav-tariff .nav-right{
+                        border-right:1px solid #02945d;
+                    }
+
+                    .nav-tariff .nav-left{
+                        border-left:1px solid #02945d;
+                    }
+
+                    .nav-tariff a{
+                        color:black;
+                        text-decoration: none;
+                    }
+
+                    .nav-tariff a.active{
+                        background-color:#E2F7EF;
+                    }
+
+                    .nav-tariff a:hover{
+                        background-color:#E2F7EF;
+                    }
+
+                    @media only screen and (max-width: 768px) {
+
+                        .nav-tariff {
+                            float: left;
+                        }
+
+                        .main-section-tariff .row .col-12:not(:first-child) {
+                            margin-top: 0px;
+                            margin-bottom: 20px;
+                        }
+
+                        .nav-top-tariff .country{
+                            margin-bottom:20px !important;
+                        }
+
+                        .nav-top-tariff .country,
+                        .nav-top-tariff .w-nav-tariff{
+                            width:auto !important;
+                        }
+                    }
+
+                </style>
+
+
+                <script>
+
+                    //Переменные js;
+                    var rules_prices = {"NO":2,"UA":1,"RU":1,"KZ":1,"BY":1};
+                    var rules = {"NO":"US","UA":"UA","RU":"RU","KZ":"RU","BY":"RU"};
+                    var country = 'RU';
+                    var selectedCountry = 'RU';
+                    var tariff_config = {"US":{"symbol":"$","min":"200","avg":"756","max":"1 800","linkMin":"50 \u0441\u0441\u044b\u043b\u043e\u043a","linkAvg":"210 \u0441\u0441\u044b\u043b\u043e\u043a","linkMax":"500 \u0441\u0441\u044b\u043b\u043e\u043a"},"RU":{"symbol":"\u0440\u0443\u0431.","min":"12 900","avg":"48 700","max":"109 600","linkMin":"50 \u0441\u0441\u044b\u043b\u043e\u043a","linkAvg":"210 \u0441\u0441\u044b\u043b\u043e\u043a","linkMax":"500 \u0441\u0441\u044b\u043b\u043e\u043a"},"UA":{"symbol":"\u0433\u0440\u043d.","min":"5 300","avg":"18 300","max":"41 000","linkMin":"50 \u0441\u0441\u044b\u043b\u043e\u043a","linkAvg":"210 \u0441\u0441\u044b\u043b\u043e\u043a","linkMax":"500 \u0441\u0441\u044b\u043b\u043e\u043a"}};
+                    var tariff_config_burzh = {"US":{"symbol":"$","min":"300","avg":"1 440","max":"3 400","linkMin":"40 \u0441\u0441\u044b\u043b\u043e\u043a","linkAvg":"200 \u0441\u0441\u044b\u043b\u043e\u043a","linkMax":"500 \u0441\u0441\u044b\u043b\u043e\u043a"},"RU":{"symbol":"\u0440\u0443\u0431.","min":"19 500","avg":"93 600","max":"221 000","linkMin":"40 \u0441\u0441\u044b\u043b\u043e\u043a","linkAvg":"200 \u0441\u0441\u044b\u043b\u043e\u043a","linkMax":"500 \u0441\u0441\u044b\u043b\u043e\u043a"},"UA":{"symbol":"\u0433\u0440\u043d.","min":"8 100","avg":"38 880","max":"91 800","linkMin":"40 \u0441\u0441\u044b\u043b\u043e\u043a","linkAvg":"200 \u0441\u0441\u044b\u043b\u043e\u043a","linkMax":"500 \u0441\u0441\u044b\u043b\u043e\u043a"}};
+
+                    // Переключение навигации.
+                    var countryRule =  function (rules,country){
+
+                        if(typeof rules[country] =="undefined"){
+                            country = rules['NO'];
+                        }else{
+                            country = rules[country];
+                        }
+
+                        return country;
+                    }
+
+                    // Выборка нужного массива цен
+                    var priceRule =  function (rules,country,tariff_config,tariff_config_burzh){
+
+                        var arr = false;
+
+                        if(rules[country] == 1){
+                            arr = tariff_config;
+                        }else{
+                            arr = tariff_config_burzh;
+                        }
+
+                        return arr;
+                    }
+
+
+                    $(function(){
+
+                        var tariffMin = $('.tariff-min .price');
+                        var tariffAvg = $('.tariff-avg .price');
+                        var tariffMax = $('.tariff-max .price');
+                        var tariffMinLink = $('.tariff-min .link-count');
+                        var tariffAvgLink = $('.tariff-avg .link-count');
+                        var tariffMaxLink = $('.tariff-max .link-count');
+                        // Значение по-умолчанию
+                        // Цена
+
+                        var configArray = priceRule(rules_prices,country,tariff_config,tariff_config_burzh);
+                        tariffMin.html(configArray[country]['min']+" "+configArray[country]['symbol']);
+                        tariffAvg.html(configArray[country]['avg']+" "+configArray[country]['symbol']);
+                        tariffMax.html(configArray[country]['max']+" "+configArray[country]['symbol']);
+                        tariffMinLink.html(configArray[country]['linkMin']);
+                        tariffAvgLink.html(configArray[country]['linkAvg']);
+                        tariffMaxLink.html(configArray[country]['linkMax']);
+
+                        // Навигация
+                        $('.nav-tariff a').removeClass('active');
+                        $('.nav-tariff a[data-currency="'+country+'"]').addClass('active');
+
+                        //Выбор страны
+                        $('#select-tariff').val(selectedCountry).trigger('change');
+
+                        // Переключатель навигации
+                        $('.nav-tariff').on('click','a',function(){
+
+                            $('.nav-tariff a').removeClass('active');
+                            $(this).addClass('active');
+
+                            var countryChange = $(this).data('currency');
+                            countryChange = countryRule(rules,countryChange);
+                            var configArray = priceRule(rules_prices,country,tariff_config,tariff_config_burzh);
+
+                            tariffMin.html(configArray[countryChange]['min']+" "+configArray[countryChange]['symbol']);
+                            tariffAvg.html(configArray[countryChange]['avg']+" "+configArray[countryChange]['symbol']);
+                            tariffMax.html(configArray[countryChange]['max']+" "+configArray[countryChange]['symbol']);
+                            tariffMinLink.html(configArray[countryChange]['linkMin']);
+                            tariffAvgLink.html(configArray[countryChange]['linkAvg']);
+                            tariffMaxLink.html(configArray[countryChange]['linkMax']);
+
+                        });
+
+
+
+
+                        // Событие при смене страны
+                        $('#select-tariff').on('change', function(){
+
+                            var countryChange = $('#select-tariff option:selected').val();
+                            country = countryRule(rules,countryChange);
+
+                            var configArray = priceRule(rules_prices,country,tariff_config,tariff_config_burzh);
+
+                            tariffMin.html(configArray[country]['min']+" "+configArray[country]['symbol']);
+                            tariffAvg.html(configArray[country]['avg']+" "+configArray[country]['symbol']);
+                            tariffMax.html(configArray[country]['max']+" "+configArray[country]['symbol']);
+                            tariffMinLink.html(configArray[country]['linkMin']);
+                            tariffAvgLink.html(configArray[country]['linkAvg']);
+                            tariffMaxLink.html(configArray[country]['linkMax']);
+
+                            $('.nav-tariff a').removeClass('active');
+                            $('.nav-tariff a[data-currency="'+country+'"]').addClass('active');
+                        });
+                    });
+
+
+                </script>
+                <!-- copied from mainpage -->
+
+                <div class="main-section-tariff section-tariff--extended" id="tariffs">
+                    <div class="container">
+                    <!--		<div class="top">-->
+                    <div class="">
+                        <div class="h1">Стоимость комплексного линкбилдинга</div>
+
+                        <!--            <div class="nav-top-tariff">-->
+                        <div class="row row-16">
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="country mb-24 form-group">
+                                    <select class="form-control" id="select-tariff">
+                                        <option value="NO">Выбрать страну</option>
+                                        <option value="RU">Россия</option>
+                                        <option value="UA">Украина</option>
+                                        <option value="BY">Беларусь</option>
+                                        <option value="KZ">Казахстан</option>
+                                        <option value="AU">Австралия</option>
+                                        <option value="GB">Великобритания</option>
+                                        <option value="DE">Германия</option>
+                                        <option value="IN">Индия</option>
+                                        <option value="ES">Испания</option>
+                                        <option value="CA">Канада</option>
+                                        <option value="NG">Нигерия</option>
+                                        <option value="PL">Польша</option>
+                                        <option value="US">США</option>
+                                        <option value="FR">Франция</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!--                <div class="w-nav-tariff">-->
+                            <div class="col-12 col-md-6 col-lg-8 w-nav-tariff">
+                                <nav class="nav nav-tariff">
+                                    <a data-currency="RU" class="nav-link active nav-right" href="javascript:void(0);"><span>Рубль</a>
+                                    <a data-currency="UA" class="nav-link" href="javascript:void(0);">Гривна</a>
+                                    <a data-currency="US" class="nav-link nav-left" href="javascript:void(0);">Доллар</a>
+                                </nav>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md">
+                                <div class="panel tariff tariff-min">
+                                    <div class="panel-body">
+                                        <div class="title">Стартап</div>
+                                        <div class="fs-12 text-info mb-20">Виды ссылок, которые будут использоваться:</div>
+                                        <p class="text-left mb-8">Крауд-маркетинг <span class="fs-14">(20 ссылок)</span></p>
+                                        <ul class="list">
+                                            <li>форумы;</li>
+                                            <li>комментарии;</li>
+                                            <li>сайты вопросов/ответов;</li>
+                                        </ul>
+                                        <p class="text-left mb-8">Сабмиты <span class="fs-14">(50 ссылок)</span></p>
+                                        <ul class="list">
+                                            <li>локальные каталоги;</li>
+                                            <li>директории и каталоги;</li>
+                                            <li>картографические сервисы;</li>
+                                            <li>профили социальных сетей;</li>
+                                            <li>профили форумов;</li>
+                                        </ul>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <div class="price-wrap">от <span class="price">12 900 руб.</span>/мес</div>
+                                        <p class="mark">от <b>70 ссылок</b> в месяц по <b class="text-success">2.84$</b> за ссылку</p>
+                                        <p class="contract">Контракт от 3 месяцев</p>
+                                        <a href="#modal-registration" class="btn btn-outline-success rounded" data-toggle="modal">Оставьте заявку</a>
+                                    </div>
+                                </div><!--panel-->
+                            </div>
+                            <div class="col-12 col-md">
+                                <div class="panel tariff lg tariff-avg">
+                                    <div class="panel-body">
+                                        <div class="descr">Все SEO-критерии согласовываются</div>
+                                        <div class="title">Профессиональный</div>
+                                        <div class="fs-12 text-info mb-20">Виды ссылок, которые будут использоваться:</div>
+                                        <p class="text-left mb-8">Крауд-маркетинг</p>
+                                        <ul class="list">
+                                            <li>форумы;</li>
+                                            <li>комментарии;</li>
+                                            <li>сайты вопросов/ответов;</li>
+                                        </ul>
+                                        <p class="text-left mb-8">Сабмиты</p>
+                                        <ul class="list">
+                                            <li>локальные каталоги;</li>
+                                            <li>директории и каталоги;</li>
+                                            <li>картографические сервисы;</li>
+                                            <li>профили социальных сетей;</li>
+                                            <li>профили форумов;</li>
+                                        </ul>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <div class="price-wrap">от <span class="price">48 700 руб.</span>/мес</div>
+                                        <p class="mark">от <b>170 ссылок</b> в месяц по <b class="text-success">2.84$</b> за ссылку</p>
+                                        <p class="contract">Контракт от 6 месяцев</p>
+                                        <a href="#modal-registration" class="btn btn-success rounded" data-toggle="modal">Оставьте заявку</a>
+                                    </div>
+                                </div><!--panel-->
+                            </div>
+                            <div class="col-12 col-md">
+                                <div class="panel tariff tariff-max">
+                                    <div class="panel-body">
+                                        <div class="title">Enterprise</div>
+                                        <div class="fs-12 text-info mb-20">Виды ссылок, которые будут использоваться:</div>
+                                        <p class="text-left mb-8">Крауд-маркетинг <span class="fs-14">(20 ссылок)</span></p>
+                                        <ul class="list">
+                                            <li>форумы;</li>
+                                            <li>комментарии;</li>
+                                            <li>сайты вопросов/ответов;</li>
+                                        </ul>
+                                        <p class="text-left mb-8">Сабмиты <span class="fs-14">(50 ссылок)</span></p>
+                                        <ul class="list">
+                                            <li>локальные каталоги;</li>
+                                            <li>директории и каталоги;</li>
+                                            <li>картографические сервисы;</li>
+                                            <li>профили социальных сетей;</li>
+                                            <li>профили форумов;</li>
+                                        </ul>
+                                        <p class="text-left mb-0">Гостевые статьи <i class="fas fa-info-circle text-success" data-toggle="tooltip" data-placement="top" title="Бюджет на размещение гостевых постов согласовывается дополнительно"></i></p>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <div class="price-wrap">от <span class="price">109 600 руб.</span>/мес</div>
+                                        <p class="mark">от <b>270 ссылок</b> в месяц по <b class="text-success">2.84$</b> за ссылку</p>
+                                        <p class="contract">Контракт от 12 месяцев</p>
+                                        <a href="#modal-registration" class="btn btn-outline-success rounded" data-toggle="modal">Оставьте заявку</a>
+                                    </div>
+                                </div><!--panel-->
+                            </div>
+                        </div>
+                    </div><!--.top-->
+                    <div class="bottom">
+                        <!-- TODO: chatra.io. -->
+                        Не подошел тариф? <a href="#" onclick="Chatra('openChat', true); return false;">Обратитесь к менеджеру</a>
+                    </div><!--.bottom-->
+                    </div>
+                </div>
+
+            <div class="container">
                 <div class="landing-tools lax" data-lax-opacity="(vh*0.9) 0, (vh*0.5) 1" data-lax-translate-y="(vh*0.9) 200, (vh*0.5) 0" data-lax-anchor="self">
                     <div class="h1 mb-28">Инструменты, которые мы используем</div>
                     <div class="row justify-content-center">
@@ -525,6 +856,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="hr mb-48"></div>
+            <div class="container">
+                <p class="fs-18 mb-0">Заказать ссылки на сайт еще никогда не было так просто. Вам достаточно оставить заявку, обсудить детали с нашим менеджером, купить нужный пакет ссылок по подходящей цене и начать наращивание ссылочной массы🙂</p>
             </div>
 
         </div><!--#content-->

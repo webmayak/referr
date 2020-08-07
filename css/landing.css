@@ -46,6 +46,10 @@
 
 /* menu */
 
+html {
+    scroll-behavior: smooth;
+}
+
 .lh-115 {
     line-height: 1.15;
 }
@@ -125,6 +129,24 @@
     background-size: calc(100% - 50px);
     background-repeat: no-repeat;
     background-position: 50% 100%;
+}
+
+.landing-header .btn-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.landing-header .btn + .btn {
+    margin-left: 25px;
+}
+
+.landing-header .btn.btn-outline-success {
+    color: #02945D;
+}
+
+.landing-header .btn.btn-outline-success:hover {
+    background-color: #00A769;
+    color: #ffffff;
 }
 
 .landing-slogan {
@@ -256,7 +278,7 @@
 }
 
 .landing-methods {
-    margin-bottom: 70px;
+    margin-bottom: 20px;
 }
 
 .landing-methods__card {
@@ -293,6 +315,100 @@
 .landing-methods__card p:last-child,
 .landing-methods__card ul:last-child {
     margin-bottom: 0;
+}
+
+.section-tariff--extended {
+    padding-top: 50px;
+    background-repeat: no-repeat;
+    background-size: 100% 50%;
+    background-image: linear-gradient(#ffffff 0%, #f5f8f7 100%);
+}
+
+.section-tariff--extended .nav-tariff {
+    border-color: #dddddd;
+}
+
+.section-tariff--extended .nav-tariff .nav-left,
+.section-tariff--extended .nav-tariff .nav-right {
+    border-color: #dddddd;
+}
+
+.section-tariff--extended .nav-tariff a {
+    padding: 12px 35px;
+}
+
+.section-tariff--extended .nav-tariff a:hover,
+.section-tariff--extended .nav-tariff a.active {
+    background-color: #f3f5f4;
+}
+
+.section-tariff--extended .tariff {
+    box-shadow: 0 50px 70px rgba(177, 177, 177, 0.16);
+}
+
+.section-tariff--extended .panel {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-tariff--extended .panel .panel-body {
+    padding-top: 50px;
+    padding-bottom: 25px;
+}
+
+.section-tariff--extended .panel .panel-footer {
+    margin: auto 20px 0;
+    padding: 25px 0 2rem;
+    border-top: 1px solid #F6F8F7;
+}
+
+.section-tariff--extended .tariff .descr {
+    font-size: 12px;
+    color: #02945D;
+    position: absolute;
+    left: 2rem;
+    right: 2rem;
+    top: 28px;
+}
+
+.section-tariff--extended .tariff .title {
+    margin-bottom: 8px;
+}
+
+.section-tariff--extended .tariff .price-wrap {
+    font-size: 26px;
+    font-weight: 300;
+    margin-bottom: 4px;
+}
+
+.section-tariff--extended .tariff .price {
+    color: inherit;
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.section-tariff--extended .tariff .mark {
+    font-size: 14px;
+    background-color: #fff6b1;
+    display: inline;
+}
+
+.section-tariff--extended .tariff .contract {
+    font-size: 14px;
+    color: #d17e40;
+    margin-top: 8px;
+    margin-bottom: 20px;
+}
+
+.section-tariff--extended .tariff .btn {
+    font-size: 14px;
+}
+
+.section-tariff--extended .bottom {
+    font-size: 26px;
+    padding-top: 60px;
 }
 
 .landing-tools {
@@ -382,6 +498,12 @@
 
 .landing-consult {
     padding: 60px 0 30px;
+}
+
+@media (max-width: 1199px) {
+    .section-tariff--extended .tariff .price-wrap {
+        font-size: 24px;
+    }
 }
 
 @media (max-width: 991px) {
