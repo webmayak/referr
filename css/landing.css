@@ -278,7 +278,7 @@ html {
 }
 
 .landing-methods {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .landing-methods__card {
@@ -318,22 +318,31 @@ html {
 }
 
 .section-tariff--extended {
-    padding-top: 50px;
+    padding-top: 30px;
     background-repeat: no-repeat;
     background-size: 100% 50%;
     background-image: linear-gradient(#ffffff 0%, #f5f8f7 100%);
 }
 
 .section-tariff--extended .nav-tariff {
-    border-color: #dddddd;
+    float: right;
+    overflow: hidden;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    flex-wrap: nowrap;
 }
 
-.section-tariff--extended .nav-tariff .nav-left,
-.section-tariff--extended .nav-tariff .nav-right {
-    border-color: #dddddd;
+.section-tariff--extended .nav-tariff .nav-right{
+    border-right: 1px solid #dddddd;
+}
+
+.section-tariff--extended .nav-tariff .nav-left{
+    border-left: 1px solid #dddddd;
 }
 
 .section-tariff--extended .nav-tariff a {
+    color: inherit;
+    text-decoration: none;
     padding: 12px 35px;
 }
 
@@ -355,6 +364,7 @@ html {
 .section-tariff--extended .panel .panel-body {
     padding-top: 50px;
     padding-bottom: 25px;
+    position: relative;
 }
 
 .section-tariff--extended .panel .panel-footer {
@@ -404,11 +414,6 @@ html {
 
 .section-tariff--extended .tariff .btn {
     font-size: 14px;
-}
-
-.section-tariff--extended .bottom {
-    font-size: 26px;
-    padding-top: 60px;
 }
 
 .landing-tools {
@@ -514,11 +519,42 @@ html {
     .landing-slogan__img {
         margin-bottom: 30px;
     }
+
+    .section-tariff--extended .h1 {
+        font-size: 2rem;
+    }
+
+    .section-tariff--extended .nav-tariff a {
+        padding: 12px 28px;
+    }
+
+    .section-tariff--extended .tariff .price-wrap {
+        font-size: 20px;
+    }
 }
 
 @media (max-width: 767px) {
     .landing-partner .text-balloon {
         left: 0;
+    }
+
+    .section-tariff--extended .row .col-12:not(:first-child) {
+        margin-top: 0;
+    }
+
+    .section-tariff--extended .nav-tariff {
+        float: none;
+    }
+
+    .section-tariff--extended .nav-tariff a {
+        flex-grow: 1;
+        text-align: center;
+        padding: 12px 20px;
+    }
+
+    .section-tariff--extended .panel {
+        margin-top: 30px;
+        height: auto;
     }
 }
 
@@ -557,5 +593,19 @@ html {
 
     .landing-faq {
         margin-bottom: 75px;
+    }
+
+    .section-tariff--extended .panel .panel-body {
+        padding: 1rem;
+    }
+
+    .section-tariff--extended .tariff .descr {
+        position: static;
+        margin-bottom: 4px;
+    }
+
+    .section-tariff--extended .panel .panel-footer {
+        margin: 0 1rem;
+        padding: 1rem 0;
     }
 }
