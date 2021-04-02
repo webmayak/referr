@@ -14,9 +14,91 @@
 }
 
 .p-reviews__content {
-    padding-bottom: 100px;
+    padding-bottom: 70px;
 }
 
 .p-reviews__cta-icon {
     width: 80px;
+}
+
+.review-item {
+    background-color: #ffffff;
+    border-radius: 6px;
+    padding: 30px;
+    transition: 0.4s;
+}
+
+.review-item:hover {
+    box-shadow: 0 0 30px 0 #ccc;
+}
+
+.review-item__badge {
+    font-size: 14px;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.review-item__badge--yellow {
+    background-color: #fff5cc;
+}
+
+.review-item__badge--blue {
+    background-color: #d8e8ff;
+}
+
+.review-item__badge--rose {
+    background-color: #edc2d2;
+}
+
+.review-item__badge--lavender {
+    background-color: #e6c7ed;
+}
+
+.review-item__logo {
+    background-color: #ededed;
+    padding: 15px;
+}
+
+.review-item__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #c4c4c4;
+    border-color: #c4c4c4;
+    color: #ffffff !important;
+    padding: 0;
+}
+
+.btn-sm {
+    font-size: 14px;
+    padding: 0.5rem 1rem;
+}
+
+.btn-transparent {
+    border-color: #e7e7e7;
+    background-color: transparent;
+}
+
+.btn-transparent:hover,
+.btn-transparent:focus {
+    border-color: #cccccc;
+}
+
+.btn-white {
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+.btn-white:hover,
+.btn-white:focus {
+    background-color: #fdfdfd;
+}
+
+@media (max-width: 575px) {
+    .review-item {
+        padding: 20px;
+    }
 }
