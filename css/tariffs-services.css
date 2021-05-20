@@ -199,8 +199,7 @@
   margin-bottom: 24px;
 }
 
-.tab-pane .crowd-item .btn,
-.tab-pane .package-item .btn {
+.tab-pane .crowd-item .btn, .tab-pane .package-item .btn {
   margin-top: 0;
   margin-right: 0;
   width: auto;
@@ -209,8 +208,7 @@
   float: none;
 }
 
-.tab-pane .crowd-item .btn.btn-green,
-.tab-pane .package-item .btn.btn-green {
+.tab-pane .crowd-item .btn.btn-green, .tab-pane .package-item .btn.btn-green {
   background-color: #008E59;
   color: #fff;
   transition: .15s ease-in-out;
@@ -236,6 +234,58 @@
   font-size: 26px;
   font-weight: bold;
   white-space: nowrap;
+}
+
+.test-private {
+  width: 540px;
+  max-width: 100%;
+  margin: 100px auto;
+}
+
+.test-private .test_ttl {
+  font-size: 22px;
+  font-weight: normal;
+  text-align: left;
+}
+
+.test-private .test_answers__item {
+  font-size: 16px;
+  font-weight: normal;
+  padding: 17px 20px;
+  box-shadow: 0 3px 20px rgb(124 124 124 / 16%);
+  margin-bottom: 20px;
+}
+
+.test-private .test_answers__item.correct, .test-private .test_answers__item.wrong {
+  box-shadow: none;
+}
+
+.test-private .test_answers__item.correct::after, .test-private .test_answers__item.wrong::after {
+  font-size: 18px;
+}
+
+.test-private .test_answers__item.field {
+  box-shadow: none;
+  border: none;
+  padding: 0;
+}
+
+.test-private .test_answers__item .form-control {
+  padding: 17px 20px;
+  height: 60px;
+  font-size: 16px;
+}
+
+.test-private .test_btn {
+  font-size: 22px;
+  margin-top: 40px;
+}
+
+@media (max-width: 991px) {
+  .test-private {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 @media (max-width: 767px) {
