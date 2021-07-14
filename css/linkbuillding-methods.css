@@ -30,9 +30,18 @@
 }
 
 .btn-sm {
-  padding-top: 9px;
-  padding-bottom: 9px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   font-size: 14px;
+}
+
+.btn-transparent {
+  border-color: #e7e7e7;
+  background-color: transparent;
+}
+
+.btn-transparent:hover, .btn-transparent:focus {
+  border-color: #cccccc;
 }
 
 .z-1 {
@@ -46,6 +55,23 @@
 
 .badge-custom--warning {
   background-color: rgba(255, 225, 90, 0.3);
+}
+
+.filter-tag {
+  padding-right: 40px;
+}
+
+.filter-tag::after {
+  content: '';
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-image: url(../img/close-icon.svg);
 }
 
 .icon-group .icon:not(:last-child) {
