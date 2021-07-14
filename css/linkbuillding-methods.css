@@ -1,0 +1,104 @@
+/* common helpers */
+
+.bg-lightgray {
+  background-color: #f5f5f5;
+}
+
+.text-green {
+  color: #58bf80;
+}
+
+.text-yellow {
+  color: #f2c941;
+}
+
+.text-orange {
+  color: #f86a40;
+}
+
+.stretched-link {
+  position: static;
+}
+
+.stretched-link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.btn-sm {
+  padding-top: 9px;
+  padding-bottom: 9px;
+  font-size: 14px;
+}
+
+.z-1 {
+  z-index: 1;
+}
+
+.badge-custom {
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+
+.badge-custom--warning {
+  background-color: rgba(255, 225, 90, 0.3);
+}
+
+.icon-group .icon:not(:last-child) {
+  margin-right: 5px;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
+
+.i-price {
+  content: url(//referr.ru/wp-content/themes/referr2019/css/../img/price-icon.svg);
+}
+
+.i-tariff-plan {
+  content: url(//referr.ru/wp-content/themes/referr2019/css/../img/tariff_plan_icon.svg);
+}
+
+.i-tariff-plan-active {
+  content: url(//referr.ru/wp-content/themes/referr2019/css/../img/tariff_plan_active_icon.svg);
+}
+
+.i-region {
+  content: url(../img/region-icon.svg);
+}
+
+.i-task {
+  content: url(../img/task-icon.svg);
+}
+
+.i-duration {
+  content: url(../img/duration-icon.svg);
+}
+
+/* linkbuillding-method-card */
+
+.linkbuillding-method-card .params-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 79px;
+  gap: 8px;
+}
+
+.linkbuillding-method-card .params-list li {
+  display: flex;
+  align-items: center;
+}
+
+.linkbuillding-method-card__actions {
+  min-width: 135px;
+}
