@@ -83,6 +83,18 @@
   background-image: url(../img/close-icon.svg);
 }
 
+.card-design {
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid #f7f6ec;
+  transition: .3s ease-in-out;
+}
+
+.card-design:hover {
+  border-color: transparent;
+  box-shadow: 0 10px 30px rgba(177, 177, 177, 0.16);
+}
+
 .ol-design {
   list-style: none;
   padding-left: 0;
@@ -92,24 +104,15 @@
 
 .ol-design li {
   position: relative;
-  background-color: #fff;
-  border-radius: 4px;
-  border: 1px solid #f7f6ec;
   padding: 15px 30px 15px 100px;
   min-height: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: .3s ease-in-out;
 }
 
 .ol-design li:not(:last-child) {
   margin-bottom: 20px;
-}
-
-.ol-design li:hover {
-  border-color: transparent;
-  box-shadow: 0 10px 30px rgba(177, 177, 177, 0.16);
 }
 
 .ol-design li::before {
@@ -281,4 +284,19 @@
 
 .linkbuillding-method__skills li, .linkbuillding-method__params li {
   margin-bottom: 1rem;
+}
+
+.linkbuillding-method__tool {
+  padding: 30px;
+  height: 100%;
+  display: flex;
+}
+
+.linkbuillding-method__articles a {
+  color: #000;
+  transition: .3s ease-in-out;
+}
+
+.linkbuillding-method__articles a:hover {
+  color: #02945d;
 }
