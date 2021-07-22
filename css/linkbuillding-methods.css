@@ -106,6 +106,10 @@
   box-shadow: 0 10px 30px rgba(177, 177, 177, 0.16);
 }
 
+.card-design:hover .expert-like__plus {
+  opacity: 1;
+}
+
 .ol-design {
   list-style: none;
   padding-left: 0;
@@ -297,6 +301,10 @@
   margin-bottom: 1rem;
 }
 
+.linkbuillding-method__params {
+  border-right: 1px solid rgba(0, 0, 0, .1);
+}
+
 .linkbuillding-method__tool {
   padding: 10px 30px;
   height: 100%;
@@ -345,9 +353,31 @@
   font-size: 2rem;
   color: #b3b3b3;
   top: -50px;
-  left: 0
+  left: 0;
 }
 
 .owl-carousel-nav-left .owl-nav .owl-prev {
+  margin-right: 1rem
+}
+
+.owl-carousel-reviews .owl-stage-outer, .experts-reviews-carousel .owl-stage-outer {
+  padding: 30px;
+  margin: -30px;
+}
+
+.experts-nav-carousel {
+  padding-right: 100px;
+}
+
+.experts-reviews-carousel .owl-nav {
+  position: absolute;
+  display: flex;
+  font-size: 2rem;
+  color: #b3b3b3;
+  top: -56px;
+  right: 0;
+}
+
+.experts-reviews-carousel .owl-nav .owl-prev {
   margin-right: 1rem
 }
