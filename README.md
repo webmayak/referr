@@ -6,3 +6,5 @@
 - [Опрос](https://webmayak.github.io/referr/test.html)
 - [Отзывы](https://webmayak.github.io/referr/reviews.html)
 - [Тарифы и услуги](https://webmayak.github.io/referr/tariffs-services.html)
+- [Каталог методов линкбилдинга](https://webmayak.github.io/referr/linkbuillding-methods-catalog.html)
+- [Страница метода линкбилдинга](https://webmayak.github.io/referr/linkbuillding-method.html)
