@@ -245,6 +245,10 @@
   padding: 1rem 0;
 }
 
+.linkbuillding-method__intro-descr {
+  font-size: 18px;
+}
+
 .linkbuillding-method__pros-cons {
   background-color: #fff;
   border-radius: 4px;
@@ -309,11 +313,17 @@
   border-right: 1px solid rgba(0, 0, 0, .1);
 }
 
+.linkbuillding-method__description {
+  padding: 30px;
+}
+
 .linkbuillding-method__tool {
   padding: 10px 30px;
   height: 100%;
   min-height: 100px;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .linkbuillding-method__article a {
@@ -384,4 +394,55 @@
 
 .experts-reviews-carousel .owl-nav .owl-prev {
   margin-right: 1rem
+}
+
+@media (max-width: 991px) {
+  .linkbuillding-method__skills ul, .linkbuillding-method__params ul {
+    column-count: initial;
+  }
+}
+
+@media (max-width: 767px) {
+  .linkbuillding-method__intro-descr {
+    font-size: 16px;
+  }
+  .experts-nav-carousel {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .linkbuillding-method__pros-cons-footer {
+    font-size: 14px;
+  }
+  .linkbuillding-method__params {
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    border-right: 0;
+  }
+  .linkbuillding-method__description {
+    padding: 20px;
+    font-size: 14px;
+  }
+  .ol-design li {
+    padding: 15px 20px;
+  }
+  .ol-design li::before {
+    display: none;
+  }
+  .ol-design li .h4::before {
+    content: counter(li) ".";
+    counter-increment: li;
+    color: #02945d;
+    margin-right: 3px;
+  }
+  .experts-nav-carousel .expert-avatar {
+    width: 40px;
+    height: 40px;
+  }
+  .linkbuillding-method__article a {
+    font-size: 18px;
+  }
+  .linkbuillding-method__tool {
+    padding: 20px;
+  }
 }
