@@ -39416,6 +39416,7 @@ License URI: LICENSE
     <div class="header-separator"></div>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/linkbuillding-methods.css">
     <div class="bg-lightgray">
       <div id="content">
@@ -39426,7 +39427,64 @@ License URI: LICENSE
             </span>&nbsp;/&nbsp;<span class="post post-page current-item">Каталог методов линкбилдинга СНГ&Запад</span></div>
           <div class="mb-40"></div>
           <h1>Каталог методов линкбилдинга СНГ&Запад</h1>
-
+          <div class="linkbuillding-methods-filter row row-10 align-items-center mb-3">
+            <div class="col-xl-2 col-md-4 col-sm-6 mb-10 region">
+              <select class="linkbuillding-methods-filter__select" style="width: 100%" data-placeholder="Регион продвижения">
+                <option></option>
+                <option>СНГ</option>
+                <option>Запад</option>
+                <option>Универсальный</option>
+              </select>
+            </div>
+            <div class="col-xl-2 col-md-4 col-sm-6 mb-10 task">
+              <select class="linkbuillding-methods-filter__select" style="width: 100%" data-placeholder="Задачи">
+                <option></option>
+                <option>Для траста</option>
+              </select>
+            </div>
+            <div class="col-xl-2 col-md-4 col-sm-6 mb-10 duration">
+              <select class="linkbuillding-methods-filter__select" style="width: 100%" data-placeholder="По типу оплаты">
+                <option></option>
+                <option>Оплата по времени</option>
+                <option>С разовой оплатой</option>
+              </select>
+            </div>
+            <div class="col-xl-2 col-md-4 col-sm-6 mb-10">
+              <select class="linkbuillding-methods-filter__select" style="width: 100%" data-placeholder="Сложность">
+                <option></option>
+                <option>Easy</option>
+                <option>Medium</option>
+                <option>Hard</option>
+              </select>
+            </div>
+            <div class="col-xl-2 col-md-4 col-sm-6 mb-10">
+              <div class="linkbuillding-methods-filter__price">
+                <span class="mr-2">Стоимость</span>
+                <div class="d-flex flex-row-reverse">
+                  <input class="sr-only" type="radio" name="price" id="price3" value="3" aria-label="High">
+                  <label for="price3" class="linkbuillding-methods-filter__price-label">
+                    <i class="icon i-tariff-plan"></i>
+                  </label>
+                  <input class="sr-only" type="radio" name="price" id="price2" value="2" aria-label="Medium" checked>
+                  <label for="price2" class="linkbuillding-methods-filter__price-label">
+                    <i class="icon i-tariff-plan"></i>
+                  </label>
+                  <input class="sr-only" type="radio" name="price" id="price1" value="1" aria-label="Low">
+                  <label for="price1" class="linkbuillding-methods-filter__price-label">
+                    <i class="icon i-tariff-plan"></i>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-2 col-md-4 col-sm-6 mb-10">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="recommend" checked>
+                <label class="custom-control-label" for="recommend">
+                  <span class="font-weight-bold">Referr</span> рекомендует
+                </label>
+              </div>
+            </div>
+          </div>
           <div class="row align-items-center mb-30">
             <div class="col-xl-auto mb-3 mb-xl-0">
               <div class="fs-22">Найдено <span class="font-weight-bold">15 методов</span></div>
@@ -39821,6 +39879,14 @@ License URI: LICENSE
   <script src="https://cdn.jsdelivr.net/npm/lax.js"></script>
   <div id="ref-notice-bottom" class="ref-info-block hide-notice"> <span class="ref-info-block__link"> Хотите получить бесплатную<br /> консультацию о линкбилдинге?👻 <a class="ref-notice-button" href="https://referr.ru/form/personal-offer/">Заполнить бриф</a> </span> <span class="ref-info-block__close" onclick="closeRef()"> </span></div>
   <script data-cfasync='false'>!function (t) { "use strict"; t.loadCSS || (t.loadCSS = function () { }); var e = loadCSS.relpreload = {}; if (e.support = function () { var e; try { e = t.document.createElement("link").relList.supports("preload") } catch (t) { e = !1 } return function () { return e } }(), e.bindMediaToggle = function (t) { function e() { t.media = a } var a = t.media || "all"; t.addEventListener ? t.addEventListener("load", e) : t.attachEvent && t.attachEvent("onload", e), setTimeout(function () { t.rel = "stylesheet", t.media = "only x" }), setTimeout(e, 3e3) }, e.poly = function () { if (!e.support()) for (var a = t.document.getElementsByTagName("link"), n = 0; n < a.length; n++) { var o = a[n]; "preload" !== o.rel || "style" !== o.getAttribute("as") || o.getAttribute("data-loadcss") || (o.setAttribute("data-loadcss", !0), e.bindMediaToggle(o)) } }, !e.support()) { e.poly(); var a = t.setInterval(e.poly, 500); t.addEventListener ? t.addEventListener("load", function () { e.poly(), t.clearInterval(a) }) : t.attachEvent && t.attachEvent("onload", function () { e.poly(), t.clearInterval(a) }) } "undefined" != typeof exports ? exports.loadCSS = loadCSS : t.loadCSS = loadCSS }("undefined" != typeof global ? global : this);</script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.linkbuillding-methods-filter__select').select2({
+        minimumResultsForSearch: Infinity
+      });
+    });
+  </script>
 </body>
 
 </html>

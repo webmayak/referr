@@ -396,6 +396,109 @@
   margin-right: 1rem
 }
 
+/* select2 */
+
+.select2-container, .select2-results {
+  font-size: 14px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+  color: inherit;
+}
+
+.select2-container .select2-selection--single {
+  height: 40px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 40px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 38px;
+}
+
+.select2-container--default .select2-selection--single {
+  border-color: #dcdcdc;
+}
+
+.select2-dropdown {
+  overflow: hidden;
+  border: 0;
+  box-shadow: 0 3px 30px rgba(90, 90, 90, 0.17);
+}
+
+.select2-container--open .select2-dropdown--below {
+  position: relative;
+  top: 4px;
+}
+
+.select2-container--open .select2-dropdown--above {
+  position: relative;
+  bottom: 4px;
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+  background-color: #f5f5f5;
+  color: inherit;
+}
+
+.linkbuillding-methods-filter .region .select2-container .select2-selection--single .select2-selection__rendered, .linkbuillding-methods-filter .task .select2-container .select2-selection--single .select2-selection__rendered, .linkbuillding-methods-filter .duration .select2-container .select2-selection--single .select2-selection__rendered {
+  padding-left: 32px;
+}
+
+.linkbuillding-methods-filter .select2-selection__rendered {
+  background-repeat: no-repeat;
+  background-position: 8px 50%;
+}
+
+.linkbuillding-methods-filter .region .select2-selection__rendered {
+  background-image: url(../img/region-icon.svg);
+}
+
+.linkbuillding-methods-filter .task .select2-selection__rendered {
+  background-image: url(../img/task-icon.svg);
+}
+
+.linkbuillding-methods-filter .duration .select2-selection__rendered {
+  background-image: url(../img/duration-icon.svg);
+}
+
+.linkbuillding-methods-filter {
+  font-size: 14px;
+}
+
+.linkbuillding-methods-filter__price {
+  background-color: #fff;
+  border-radius: 4px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+}
+
+.linkbuillding-methods-filter__price-label:not(:first-of-type) {
+  margin-right: 6px;
+}
+
+.linkbuillding-methods-filter__price-label .icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+}
+
+.linkbuillding-methods-filter__price input:checked~.linkbuillding-methods-filter__price-label .icon {
+  content: url(//referr.ru/wp-content/themes/referr2019/css/../img/tariff_plan_active_icon.svg);
+}
+
+.linkbuillding-methods-filter .custom-control-label {
+  line-height: 1.5rem;
+}
+
+.linkbuillding-methods-filter .custom-checkbox .custom-control-input:checked~.custom-control-label::before, .linkbuillding-methods-filter .custom-control-input:checked~.custom-control-label::before {
+  background-color: #02945d;
+}
+
 @media (max-width: 991px) {
   .linkbuillding-method__skills ul, .linkbuillding-method__params ul {
     column-count: initial;
